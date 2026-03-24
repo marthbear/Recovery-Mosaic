@@ -5,14 +5,49 @@
 .banner {
   background-color: #1a1a2e;
   padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner-title-link {
+  text-decoration: none;
 }
 
 .banner-title {
   margin: 0;
   font-size: 1.5rem;
   color: #ffffff;
+  cursor: pointer;
+}
+
+.banner-title-link:hover .banner-title {
+  opacity: 0.8;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-button {
+  background-color: #4a4a6a;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.nav-button:hover {
+  background-color: #5a5a7a;
 }
 
 .main-content {
   padding: 2rem;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
 }
