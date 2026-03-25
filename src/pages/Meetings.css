@@ -1,0 +1,53 @@
+.search-container {
+  margin-bottom: 1.5rem;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #4a4a6a;
+  border-radius: 8px;
+  background-color: #1a1a2e;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input::placeholder {
+  color: #8a8a9a;
+}
+
+.search-input:focus {
+  border-color: #6a6a8a;
+}
+
+.meetings-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.meeting-card {
+  background-color: #1a1a2e;
+  border-radius: 8px;
+  padding: 1.25rem;
+  border-left: 4px solid #4a4a6a;
+}
+
+.meeting-name {
+  margin: 0 0 0.75rem 0;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.meeting-detail {
+  margin: 0.25rem 0;
+  color: #cccccc;
+  font-size: 0.95rem;
+}
+
+.no-results {
+  color: #8a8a9a;
+  font-style: italic;
+}
