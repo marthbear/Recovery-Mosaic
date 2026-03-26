@@ -26,6 +26,7 @@ function Resources() {
         <button onClick={() => navigate('/resources/al-anon')}>Al-Anon Free Literature</button>
         <button onClick={() => navigate('/resources/professionals')}>Resources from Professionals</button>
         <button onClick={() => navigate('/resources/information')}>Additional Information</button>
+        <button onClick={() => navigate('/resources/helplines')}>Helplines</button>
       </div>
     </div>
   )
