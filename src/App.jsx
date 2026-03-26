@@ -5,6 +5,7 @@ import About from './pages/About'
 import Meetings from './pages/Meetings'
 import Events from './pages/Events'
 import Resources from './pages/Resources'
+import Books from './pages/Books'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/meetings" element={<Meetings />} />
           <Route path="/events" element={<Events />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/resources/books" element={<Books />} />
         </Routes>
       </main>
     </div>
