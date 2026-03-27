@@ -1,0 +1,38 @@
+.back-button:hover {
+  color: #ffffff;
+}
+
+.subpage-note {
+  color: #767676;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.links-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: .75rem;
+}
+
+.links-list li {
+  background-color: #1a1a2e;
+  border-radius: 8px;
+  padding: .75rem 1rem;
+  border-left: 4px solid #4a4a6a;
+  transition: border-color 0.2s;
+}
+
+.links-list li:hover {
+  border-color: #8a8aaa;
+}
+
+.links-list a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.links-list a:hover {
+  text-decoration: underline;
+}
