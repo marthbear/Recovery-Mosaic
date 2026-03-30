@@ -8,6 +8,7 @@ import Resources from "./pages/Resources";
 import Books from "./pages/Books";
 import Articles from "./pages/Articles";
 import Wellbriety from "./pages/Wellbriety";
+import Pamphlets from "./pages/Pamphlets";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
             path="/resources/wellbriety-movement"
             element={<Wellbriety />}
           />
+          <Route path="/resources/aa-pamphlets" element={<Pamphlets />} />
         </Routes>
       </main>
     </div>
