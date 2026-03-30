@@ -7,6 +7,7 @@ import Events from "./pages/Events";
 import Resources from "./pages/Resources";
 import Books from "./pages/Books";
 import Articles from "./pages/Articles";
+import Wellbriety from "./pages/Wellbriety";
 
 function App() {
   return (
@@ -39,6 +40,10 @@ function App() {
           <Route path="/resources" element={<Resources />} />
           <Route path="/resources/books" element={<Books />} />
           <Route path="/resources/articles" element={<Articles />} />
+          <Route
+            path="/resources/wellbriety-movement"
+            element={<Wellbriety />}
+          />
         </Routes>
       </main>
     </div>
