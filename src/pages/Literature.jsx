@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import "./Books.css";
 
 const literatureList = [
@@ -53,8 +52,6 @@ const bbList = [
 ];
 
 function Literature() {
-  const navigate = useNavigate();
-
   return (
     <div className="page">
       <h1>AA Literature</h1>

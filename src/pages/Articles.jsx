@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import "./Books.css";
 
 const articlesList = [
@@ -93,8 +92,6 @@ const articlesList = [
 ];
 
 function Articles() {
-  const navigate = useNavigate();
-
   return (
     <div className="page">
       <h1>Articles</h1>

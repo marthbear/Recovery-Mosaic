@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import "./Books.css";
 
 const wellbrietyList = [
@@ -30,8 +29,6 @@ const wellbrietyList = [
 ];
 
 function Wellbriety() {
-  const navigate = useNavigate();
-
   return (
     <div className="page">
       <h1>Wellbriety</h1>
