@@ -10,6 +10,7 @@ import Articles from "./pages/Articles";
 import Wellbriety from "./pages/Wellbriety";
 import Pamphlets from "./pages/Pamphlets";
 import Literature from "./pages/Literature";
+import Professionals from "./pages/Professionals";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
           />
           <Route path="/resources/aa-pamphlets" element={<Pamphlets />} />
           <Route path="/resources/aa-literature" element={<Literature />} />
+          <Route path="/resources/professionals" element={<Professionals />} />
         </Routes>
       </main>
     </div>
