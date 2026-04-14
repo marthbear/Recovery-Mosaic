@@ -38,7 +38,14 @@ function Resources() {
         <button onClick={() => navigate("/resources/aa-literature")}>
           AA Literature
         </button>
-        <button onClick={() => navigate("/resources/al-anon")}>
+        <button
+          onClick={() =>
+            window.open(
+              "https://al-anon.org/for-members/members-resources/literature/downloadable-items/",
+              "_blank",
+            )
+          }
+        >
           Al-Anon Free Literature
         </button>
         <button onClick={() => navigate("/resources/professionals")}>

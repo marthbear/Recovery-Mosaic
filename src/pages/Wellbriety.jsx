@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./Books.css";
 
-const articlesList = [
+const wellbrietyList = [
   {
     id: 4,
     title: "Al-Anon Speaker Tapes",
@@ -40,10 +40,10 @@ function Wellbriety() {
       </p>
 
       <ul className="links-list">
-        {articlesList.map((article) => (
-          <li key={article.id}>
-            <a href={article.url} target="_blank" rel="noopener noreferrer">
-              {article.title}
+        {wellbrietyList.map((well) => (
+          <li key={well.id}>
+            <a href={well.url} target="_blank" rel="noopener noreferrer">
+              {well.title}
             </a>
           </li>
         ))}
