@@ -51,3 +51,77 @@
   color: #8a8a9a;
   font-style: italic;
 }
+
+.meetings-count {
+  color: #8a8a9a;
+  margin-bottom: 1rem;
+}
+
+.filters-container {
+  margin-bottom: 1.5rem;
+}
+
+.day-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.day-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #4a4a6a;
+  border-radius: 20px;
+  background-color: transparent;
+  color: #cccccc;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.day-btn:hover {
+  background-color: #2a2a4e;
+  border-color: #6a6a8a;
+}
+
+.day-btn.active {
+  background-color: #4a4a6a;
+  color: #ffffff;
+  border-color: #6a6a8a;
+}
+
+.meeting-fellowship {
+  color: #9a9aba;
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem 0;
+}
+
+.meeting-details {
+  margin-bottom: 0.75rem;
+}
+
+.zoom-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #2d8cff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  transition: background-color 0.2s;
+}
+
+.zoom-link:hover {
+  background-color: #1a7ae8;
+}
+
+.meeting-notes {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background-color: #0f0f1a;
+  border-radius: 6px;
+  color: #aaaaaa;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
