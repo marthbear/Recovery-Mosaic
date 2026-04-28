@@ -1,6 +1,6 @@
 .resources-note {
   margin-bottom: 2rem;
-  color: #767676;
+  color: #2C160B;
   line-height: 1.7;
 }
 
@@ -17,15 +17,15 @@
 .resources-buttons button {
   padding: 1rem;
   font-size: 1.5rem;
-  background-color: #1a1a2e;
-  color: #ffffff;
-  border: 2px solid #4a4a6a;
+  background-color: #2C160B;
+  color: #FCE5CD;
+  border: 2px solid #4a2510;
   border-radius: 100px;
   cursor: pointer;
   transition: background-color 0.2s, border-color 0.2s;
 }
 
 .resources-buttons button:hover {
-  background-color: #2a2a4e;
-  border-color: #8a8aaa;
+  background-color: #4a2510;
+  border-color: #B35521;
 }

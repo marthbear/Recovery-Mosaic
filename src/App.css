@@ -3,7 +3,7 @@
 }
 
 .banner {
-  background-color: #1a1a2e;
+  background-color: #B35521;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -17,7 +17,7 @@
 .banner-title {
   margin: 0;
   font-size: 1.5rem;
-  color: #ffffff;
+  color: #FCE5CD;
   cursor: pointer;
 }
 
@@ -31,8 +31,8 @@
 }
 
 .nav-button {
-  background-color: #4a4a6a;
-  color: #ffffff;
+  background-color: #2C160B;
+  color: #FCE5CD;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   text-decoration: none;
@@ -40,7 +40,7 @@
 }
 
 .nav-button:hover {
-  background-color: #5a5a7a;
+  background-color: #4a2510;;
 }
 
 .main-content {

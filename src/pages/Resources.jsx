@@ -6,7 +6,7 @@ function Resources() {
 
   return (
     <div className="page">
-      <h1>Resources on BIPOC & Recovery EXAMPLE</h1>
+      <h1>Resources on BIPOC & Recovery</h1>
 
       <div className="resources-note">
         <p>

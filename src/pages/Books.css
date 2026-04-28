@@ -1,5 +1,5 @@
 .subpage-note {
-  color: #767676;
+  color: #2C160B;
   margin-bottom: 1.5rem;
   line-height: 1.7;
 }
@@ -12,19 +12,19 @@
 }
 
 .links-list li {
-  background-color: #1a1a2e;
+  background-color: #2C160B;
   border-radius: 8px;
   padding: .75rem 1rem;
-  border-left: 4px solid #4a4a6a;
+  border-left: 4px solid #4a2510;
   transition: border-color 0.2s;
 }
 
 .links-list li:hover {
-  border-color: #8a8aaa;
+  border-color: #B35521;
 }
 
 .links-list a {
-  color: #ffffff;
+  color: #FCE5CD;
   text-decoration: none;
   font-size: 1rem;
 }
