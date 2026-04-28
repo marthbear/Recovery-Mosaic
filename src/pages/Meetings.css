@@ -1,127 +1,172 @@
 .search-container {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .search-input {
   width: 100%;
   max-width: 400px;
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  border: 2px solid #4a4a6a;
-  border-radius: 8px;
-  background-color: #1a1a2e;
-  color: #ffffff;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  border: 1px solid #B35521;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #2C160B;
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, background-color 0.2s;
 }
 
 .search-input::placeholder {
-  color: #8a8a9a;
+  color: #5a3820;
 }
 
 .search-input:focus {
-  border-color: #6a6a8a;
+  border-color: #2C160B;
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 .meetings-list {
   display: grid;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .meeting-card {
-  background-color: #1a1a2e;
-  border-radius: 8px;
-  padding: 1.25rem;
-  border-left: 4px solid #4a4a6a;
+  background-color: rgba(44, 22, 11, 0.12);
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  border-left: 3px solid #B35521;
 }
 
 .meeting-name {
-  margin: 0 0 0.75rem 0;
-  color: #ffffff;
-  font-size: 1.1rem;
+  margin: 0 0 0.2rem 0;
+  color: #2C160B;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 .meeting-detail {
-  margin: 0.25rem 0;
-  color: #cccccc;
-  font-size: 0.95rem;
+  margin: 0.1rem 0;
+  color: #3d2010;
+  font-size: 0.8rem;
 }
 
 .no-results {
-  color: #8a8a9a;
+  color: #5a3820;
   font-style: italic;
 }
 
 .meetings-count {
-  color: #8a8a9a;
-  margin-bottom: 1rem;
+  color: #5a3820;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
 }
 
 .filters-container {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.dropdown-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.filter-label {
+  font-size: 0.75rem;
+  color: #5a3820;
+  font-weight: 500;
+}
+
+.filter-select {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.85rem;
+  border: 1px solid #B35521;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #2C160B;
+  cursor: pointer;
+  outline: none;
+  min-width: 140px;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.filter-select:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.filter-select:focus {
+  border-color: #2C160B;
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 .day-filter {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
 }
 
 .day-btn {
-  padding: 0.5rem 1rem;
-  border: 1px solid #4a4a6a;
-  border-radius: 20px;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid #B35521;
+  border-radius: 15px;
   background-color: transparent;
-  color: #cccccc;
+  color: #2C160B;
   cursor: pointer;
   transition: all 0.2s;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .day-btn:hover {
-  background-color: #2a2a4e;
-  border-color: #6a6a8a;
+  background-color: rgba(179, 85, 33, 0.2);
+  border-color: #2C160B;
 }
 
 .day-btn.active {
-  background-color: #4a4a6a;
-  color: #ffffff;
-  border-color: #6a6a8a;
+  background-color: #B35521;
+  color: #FCE5CD;
+  border-color: #B35521;
 }
 
 .meeting-fellowship {
-  color: #9a9aba;
-  font-size: 0.9rem;
-  margin: 0 0 0.75rem 0;
+  color: #5a3820;
+  font-size: 0.8rem;
+  margin: 0 0 0.3rem 0;
+  font-style: italic;
 }
 
 .meeting-details {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.3rem;
 }
 
 .zoom-link {
   display: inline-block;
-  padding: 0.5rem 1rem;
-  background-color: #2d8cff;
-  color: white;
+  padding: 0.3rem 0.6rem;
+  background-color: #B35521;
+  color: #FCE5CD;
   text-decoration: none;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  margin: 0.5rem 0;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin: 0.3rem 0;
   transition: background-color 0.2s;
 }
 
 .zoom-link:hover {
-  background-color: #1a7ae8;
+  background-color: #2C160B;
 }
 
 .meeting-notes {
-  margin-top: 0.75rem;
-  padding: 0.75rem;
-  background-color: #0f0f1a;
-  border-radius: 6px;
-  color: #aaaaaa;
-  font-size: 0.85rem;
-  line-height: 1.5;
+  margin-top: 0.4rem;
+  padding: 0.4rem 0.6rem;
+  background-color: rgba(44, 22, 11, 0.08);
+  border-radius: 4px;
+  color: #3d2010;
+  font-size: 0.75rem;
+  line-height: 1.4;
 }
