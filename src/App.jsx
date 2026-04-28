@@ -13,6 +13,7 @@ import Literature from "./pages/Literature";
 import Professionals from "./pages/Professionals";
 import Information from "./pages/Information";
 import Helplines from "./pages/Helplines";
+import Account from "./pages/Account";
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
           <Link to="/resources" className="nav-button">
             Resources
           </Link>
+          <Link to="/account" className="nav-button">
+            Account
+          </Link>
         </nav>
       </header>
       <main className="main-content">
@@ -54,6 +58,7 @@ function App() {
           <Route path="/resources/professionals" element={<Professionals />} />
           <Route path="/resources/information" element={<Information />} />
           <Route path="/resources/helplines" element={<Helplines />} />
+          <Route path="/account" element={<Account />} />
         </Routes>
       </main>
     </div>
