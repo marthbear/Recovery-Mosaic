@@ -3,7 +3,7 @@
 }
 
 .banner {
-  background-color: #B35521;
+  background-color: #efcf6c;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -17,7 +17,7 @@
 .banner-title {
   margin: 0;
   font-size: 1.5rem;
-  color: #FCE5CD;
+  color: #292212;
   cursor: pointer;
 }
 
@@ -31,16 +31,16 @@
 }
 
 .nav-button {
-  background-color: #2C160B;
-  color: #FCE5CD;
+  background-color: #d0b376;
+  color: #292212;
   padding: 0.5rem 1rem;
-  border-radius: 4px;
+  border-radius: 100px;
   text-decoration: none;
   transition: background-color 0.2s;
 }
 
 .nav-button:hover {
-  background-color: #4a2510;;
+  background-color: #cca758;;
 }
 
 .main-content {
