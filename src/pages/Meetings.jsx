@@ -1,5 +1,34 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect } from 'react'
 import './Meetings.css'
+
+const PAGE_SIZE = 15
+
+const FELLOWSHIP_FILTERS = [
+  { label: 'All',                                   test: () => true },
+  { label: 'Alcoholics Anonymous (AA)',              test: f => /\bAA\b/i.test(f) || /alcoholics anonymous/i.test(f) },
+  { label: 'Adult Children of Alcoholics (ACA)',     test: f => /\bACA\b/i.test(f) || /adult children/i.test(f) },
+  { label: 'Al-Anon Family Groups (AFG)',            test: f => /al-anon/i.test(f) || /\bAFG\b/i.test(f) },
+  { label: 'All Recovery',                           test: f => /all recovery/i.test(f) },
+  { label: 'Crystal Meth Anonymous (CMA)',           test: f => /^CMA\b/i.test(f) || /crystal meth anonymous/i.test(f) },
+  { label: 'Codependents Anonymous (CODA)',          test: f => /\bCODA\b/i.test(f) || /\bCoDA\b/i.test(f) || /codependents anonymous/i.test(f) },
+  { label: 'Debtors Anonymous',                      test: f => /debtors anonymous/i.test(f) },
+  { label: 'Clutterers Anonymous (CLA)',             test: f => /clutterers anonymous/i.test(f) || /\bCLA\b/i.test(f) },
+  { label: 'Eating Disorders Anonymous',             test: f => /eating disorders anonymous/i.test(f) },
+  { label: 'Emotions Anonymous',                     test: f => /emotions anonymous/i.test(f) },
+  { label: 'Marijuana Anonymous (MA)',               test: f => /marijuana anonymous/i.test(f) },
+  { label: 'Mindfulness Meditation Recovery',        test: f => /mindfulness meditation recovery/i.test(f) },
+  { label: 'Narcotics Anonymous (NA)',               test: f => /narcotics anonymous/i.test(f) },
+  { label: 'Overeaters Anonymous (OA)',              test: f => /overeaters anonymous/i.test(f) || /^OA\b/i.test(f) },
+  { label: 'Recovery Dharma',                        test: f => /recovery dharma/i.test(f) },
+  { label: 'Sex and Love Addicts Anonymous (SLAA)',  test: f => /\bSLAA\b/i.test(f) || /sex and love addicts/i.test(f) },
+  { label: 'SMART Recovery',                         test: f => /smart recovery/i.test(f) },
+  { label: 'Sexual Compulsive Anonymous (SCA)',      test: f => /sexual compulsive anonymous/i.test(f) },
+  { label: 'Survivors of Incest Anonymous (SIA)',    test: f => /survivors? of incest anonymous/i.test(f) },
+  { label: 'Underearners Anonymous (UA)',            test: f => /underearners anonymous/i.test(f) },
+  { label: 'Wellbriety',                             test: f => /wellbriety/i.test(f) },
+  { label: 'Sex and Porn Addicts Anonymous (SPAA)',  test: f => /SPAA/i.test(f) || /sex and porn addicts/i.test(f) },
+  { label: 'Sober Black Girls Club',                 test: f => /sober black girls club/i.test(f) },
+]
 
 function Meetings() {
   const [meetings, setMeetings] = useState([])
@@ -9,6 +38,7 @@ function Meetings() {
   const [selectedTime, setSelectedTime] = useState('All')
   const [selectedType, setSelectedType] = useState('All')
   const [loading, setLoading] = useState(true)
+  const [currentPage, setCurrentPage] = useState(1)
 
   useEffect(() => {
     fetch('/meetings.json')
@@ -41,15 +71,6 @@ function Meetings() {
     return 'Night (9 PM-12 AM)'
   }
 
-  const fellowshipTypes = useMemo(() => {
-    const types = new Set()
-    meetings.forEach(m => {
-      const type = m.fellowship.split(' - ')[0].split(' — ')[0].trim()
-      types.add(type)
-    })
-    return ['All', ...Array.from(types).sort()]
-  }, [meetings])
-
   const filteredMeetings = meetings.filter(meeting => {
     const matchesSearch =
       meeting.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -60,9 +81,20 @@ function Meetings() {
       (selectedLocation === 'Virtual' && meeting.location.toLowerCase() === 'virtual') ||
       (selectedLocation === 'In-Person' && meeting.location.toLowerCase() !== 'virtual')
     const matchesTime = selectedTime === 'All' || getTimePeriod(meeting.time) === selectedTime
-    const matchesType = selectedType === 'All' || meeting.fellowship.startsWith(selectedType)
+    const activeFilter = FELLOWSHIP_FILTERS.find(f => f.label === selectedType) ?? FELLOWSHIP_FILTERS[0]
+    const matchesType = activeFilter.test(meeting.fellowship)
     return matchesSearch && matchesDay && matchesLocation && matchesTime && matchesType
   })
+
+  const totalPages = Math.max(1, Math.ceil(filteredMeetings.length / PAGE_SIZE))
+  const paginatedMeetings = filteredMeetings.slice(
+    (currentPage - 1) * PAGE_SIZE,
+    currentPage * PAGE_SIZE
+  )
+
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [searchTerm, selectedDay, selectedLocation, selectedTime, selectedType])
 
   if (loading) {
     return (
@@ -123,8 +155,8 @@ function Meetings() {
               onChange={(e) => setSelectedType(e.target.value)}
               className="filter-select"
             >
-              {fellowshipTypes.map(type => (
-                <option key={type} value={type}>{type}</option>
+              {FELLOWSHIP_FILTERS.map(({ label }) => (
+                <option key={label} value={label}>{label}</option>
               ))}
             </select>
           </div>
@@ -144,8 +176,8 @@ function Meetings() {
       </div>
 
       <div className="meetings-list">
-        {filteredMeetings.length > 0 ? (
-          filteredMeetings.map(meeting => (
+        {paginatedMeetings.length > 0 ? (
+          paginatedMeetings.map(meeting => (
             <div key={meeting.id} className="meeting-card">
               <h3 className="meeting-name">{meeting.name}</h3>
               <p className="meeting-fellowship">{meeting.fellowship}</p>
@@ -179,6 +211,26 @@ function Meetings() {
           <p className="no-results">No meetings found matching your criteria</p>
         )}
       </div>
+
+      {totalPages > 1 && (
+        <div className="pagination">
+          <button
+            className="page-btn"
+            onClick={() => setCurrentPage(p => p - 1)}
+            disabled={currentPage === 1}
+          >
+            &#8592; Previous
+          </button>
+          <span className="page-counter">{currentPage} of {totalPages}</span>
+          <button
+            className="page-btn"
+            onClick={() => setCurrentPage(p => p + 1)}
+            disabled={currentPage === totalPages}
+          >
+            Next &#8594;
+          </button>
+        </div>
+      )}
     </div>
   )
 }

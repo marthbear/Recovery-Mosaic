@@ -1,5 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+import "./Footer.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Meetings from "./pages/Meetings";
@@ -61,6 +62,22 @@ function App() {
           <Route path="/account" element={<Account />} />
         </Routes>
       </main>
+      <footer className="site-footer">
+        <div className="footer-inner">
+          <div className="footer-contact">
+            <span className="footer-contact-label">Contact</span>
+            <a href="mailto:Info@recoverymosaic.org" className="footer-link">
+              Info@recoverymosaic.org
+            </a>
+            <a href="tel:2407455227" className="footer-link">
+              240-745-5227
+            </a>
+          </div>
+          <p className="footer-copyright">
+            Copyright &copy; 2025 Recovery Mosaic LLC. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }

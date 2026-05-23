@@ -1,0 +1,108 @@
+/* Break out of the 2rem padding from .main-content */
+.about-page {
+  margin: -2rem;
+}
+
+/* ── Hero ── */
+.about-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, #efcf6c 0%, #fce5cd 55%, #d4a96a 100%);
+  padding: 4rem 2.5rem;
+  min-height: 320px;
+  overflow: hidden;
+}
+
+.about-hero-content {
+  flex: 1;
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #2C160B;
+  margin: 0 0 1.25rem;
+  line-height: 1.15;
+}
+
+.about-lead {
+  font-size: 1.05rem;
+  color: #3d2010;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ── Mosaic tiles ── */
+.about-mosaic-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 28px);
+  grid-template-rows: repeat(6, 28px);
+  gap: 5px;
+  flex-shrink: 0;
+  opacity: 0.75;
+}
+
+.about-mosaic-tile {
+  border-radius: 4px;
+}
+
+/* ── Body ── */
+.about-body {
+  background-color: #fdf8f2;
+  padding: 3.5rem 2.5rem;
+}
+
+.about-body-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.about-paragraph {
+  font-size: 1.05rem;
+  color: #3d2010;
+  line-height: 1.95;
+  margin: 0;
+}
+
+/* ── Closing ── */
+.about-closing {
+  background: linear-gradient(135deg, #2C160B 0%, #5a3820 100%);
+  padding: 4rem 2.5rem;
+}
+
+.about-closing-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-closing p {
+  font-size: 1.15rem;
+  color: #FCE5CD;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.about-closing strong {
+  color: #efcf6c;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .about-mosaic-grid {
+    display: none;
+  }
+
+  .about-hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .about-title {
+    font-size: 1.9rem;
+  }
+}

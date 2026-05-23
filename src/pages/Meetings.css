@@ -170,3 +170,41 @@
   font-size: 0.75rem;
   line-height: 1.4;
 }
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(179, 85, 33, 0.2);
+}
+
+.page-btn {
+  padding: 0.4rem 1rem;
+  border: 1px solid #B35521;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #2C160B;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.page-btn:hover:not(:disabled) {
+  background-color: #B35521;
+  color: #FCE5CD;
+}
+
+.page-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.page-counter {
+  font-size: 0.9rem;
+  color: #5a3820;
+  min-width: 60px;
+  text-align: center;
+}
