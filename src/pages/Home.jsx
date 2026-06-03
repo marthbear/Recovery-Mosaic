@@ -57,6 +57,11 @@ function Home() {
         <div className="features-inner">
           <Link to="/meetings" className="feature-card">
             <div className="feature-icon">&#9672;</div>
+              <img
+                src="../assets/recovery-meeting.png"
+                alt="People attending a recovery meeting"
+                className="feature-image"
+              />
             <h2>Access to recovery meetings</h2>
             <p>
               Virtual and in-person meetings designed for, and led by, people of color.
@@ -64,6 +69,11 @@ function Home() {
           </Link>
           <Link to="/events" className="feature-card">
             <div className="feature-icon">&#9672;</div>
+              <img
+                src="../assets/community-event.png"
+                alt="Community gathering"
+                className="feature-image"
+              />
             <h2>Community events and gatherings</h2>
             <p>
               Foster connection, celebration, and belonging — from sober social events
@@ -72,6 +82,11 @@ function Home() {
           </Link>
           <Link to="/resources" className="feature-card">
             <div className="feature-icon">&#9672;</div>
+              <img
+                src="../assets/publication-database.png"
+                alt="Books and recovery publications"
+                className="feature-image"
+              />
             <h2>Publication database</h2>
             <p>
               Recovery stories and literature by people of color.
@@ -95,3 +110,4 @@ function Home() {
 }
 
 export default Home;
+
