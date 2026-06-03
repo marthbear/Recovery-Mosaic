@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import "./Home.css";
+import recoveryMeeting from "../assets/recovery-meeting.png";
+import communityEvent from "../assets/community-event.png";
+import publicationDatabase from "../assets/publication-database.png";
 
 const LEFT_TILES = [
   "#efcf6c", "#B35521", "#FCE5CD", "#d0b376", "#2C160B",
@@ -58,7 +61,7 @@ function Home() {
           <Link to="/meetings" className="feature-card">
             <div className="feature-icon">&#9672;</div>
               <img
-                src="../assets/recovery-meeting.png"
+                src={recoveryMeeting}
                 alt="People attending a recovery meeting"
                 className="feature-image"
               />
@@ -70,7 +73,7 @@ function Home() {
           <Link to="/events" className="feature-card">
             <div className="feature-icon">&#9672;</div>
               <img
-                src="../assets/community-event.png"
+                src={communityEvent}
                 alt="Community gathering"
                 className="feature-image"
               />
@@ -83,7 +86,7 @@ function Home() {
           <Link to="/resources" className="feature-card">
             <div className="feature-icon">&#9672;</div>
               <img
-                src="../assets/publication-database.png"
+                src={publicationDatabase}
                 alt="Books and recovery publications"
                 className="feature-image"
               />
