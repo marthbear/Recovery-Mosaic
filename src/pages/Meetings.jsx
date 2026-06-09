@@ -44,7 +44,10 @@ function Meetings() {
     fetch('/meetings.json')
       .then(res => res.json())
       .then(data => {
-        setMeetings(data)
+        const hidden = JSON.parse(localStorage.getItem('admin_hidden_meetings') || '[]')
+        const adminAdded = JSON.parse(localStorage.getItem('admin_meetings') || '[]')
+        const visible = data.filter(m => !hidden.includes(m.id))
+        setMeetings([...visible, ...adminAdded])
         setLoading(false)
       })
       .catch(err => {

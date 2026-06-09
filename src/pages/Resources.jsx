@@ -1,8 +1,36 @@
+import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Resources.css";
 
+const DEFAULT_RESOURCES = [
+  { id: "books", label: "Books", path: "/resources/books" },
+  { id: "articles", label: "Articles", path: "/resources/articles" },
+  { id: "wellbriety", label: "Wellbriety Movement", path: "/resources/wellbriety-movement" },
+  { id: "aa-pamphlets", label: "AA Pamphlets", path: "/resources/aa-pamphlets" },
+  { id: "aa-literature", label: "AA Literature", path: "/resources/aa-literature" },
+  { id: "al-anon", label: "Al-Anon Free Literature", url: "https://al-anon.org/for-members/members-resources/literature/downloadable-items/" },
+  { id: "professionals", label: "Resources from Professionals", path: "/resources/professionals" },
+  { id: "information", label: "Additional Information", path: "/resources/information" },
+  { id: "helplines", label: "Helplines", path: "/resources/helplines" },
+];
+
 function Resources() {
   const navigate = useNavigate();
+
+  const allResources = useMemo(() => {
+    const hidden = JSON.parse(localStorage.getItem("admin_hidden_resources") || "[]");
+    const adminAdded = JSON.parse(localStorage.getItem("admin_resources") || "[]");
+    const visible = DEFAULT_RESOURCES.filter(r => !hidden.includes(r.id));
+    return [...visible, ...adminAdded];
+  }, []);
+
+  function handleClick(resource) {
+    if (resource.path) {
+      navigate(resource.path);
+    } else {
+      window.open(resource.url, "_blank");
+    }
+  }
 
   return (
     <div className="page">
@@ -25,38 +53,9 @@ function Resources() {
       </div>
 
       <div className="resources-buttons">
-        <button onClick={() => navigate("/resources/books")}>Books</button>
-        <button onClick={() => navigate("/resources/articles")}>
-          Articles
-        </button>
-        <button onClick={() => navigate("/resources/wellbriety-movement")}>
-          Wellbriety Movement
-        </button>
-        <button onClick={() => navigate("/resources/aa-pamphlets")}>
-          AA Pamphlets
-        </button>
-        <button onClick={() => navigate("/resources/aa-literature")}>
-          AA Literature
-        </button>
-        <button
-          onClick={() =>
-            window.open(
-              "https://al-anon.org/for-members/members-resources/literature/downloadable-items/",
-              "_blank",
-            )
-          }
-        >
-          Al-Anon Free Literature
-        </button>
-        <button onClick={() => navigate("/resources/professionals")}>
-          Resources from Professionals
-        </button>
-        <button onClick={() => navigate("/resources/information")}>
-          Additional Information
-        </button>
-        <button onClick={() => navigate("/resources/helplines")}>
-          Helplines
-        </button>
+        {allResources.map(r => (
+          <button key={r.id} onClick={() => handleClick(r)}>{r.label}</button>
+        ))}
       </div>
     </div>
   );

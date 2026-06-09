@@ -15,6 +15,8 @@ import Professionals from "./pages/Professionals";
 import Information from "./pages/Information";
 import Helplines from "./pages/Helplines";
 import Account from "./pages/Account";
+import Login from "./pages/Login";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
@@ -35,9 +37,6 @@ function App() {
           </Link>
           <Link to="/resources" className="nav-button">
             Resources
-          </Link>
-          <Link to="/account" className="nav-button">
-            Account
           </Link>
         </nav>
       </header>
@@ -60,6 +59,8 @@ function App() {
           <Route path="/resources/information" element={<Information />} />
           <Route path="/resources/helplines" element={<Helplines />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </main>
       <footer className="site-footer">
