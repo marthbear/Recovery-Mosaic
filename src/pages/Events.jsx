@@ -3,12 +3,13 @@ import "./Events.css";
 
 // Upcoming Events
 import flyer1 from "../assets/flyer1.png";
+import flyer4 from "../assets/flyer4.png";
 
 // Ongoing Events
 import flyer2 from "../assets/flyer2.png";
 import flyer3 from "../assets/flyer3.png";
 
-const upcomingFlyers = [];
+const upcomingFlyers = [{ id: 4, src: flyer4, alt: "Ongoing Event Flyer 1" }];
 
 const ongoingFlyers = [
   { id: 2, src: flyer2, alt: "Ongoing Event Flyer 1" },
